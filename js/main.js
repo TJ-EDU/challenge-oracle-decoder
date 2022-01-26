@@ -17,9 +17,27 @@ No se permite acentuación de palabras
 Solo letras minusculas
 No se permite acentuación de palabras   
 */
+function encryptText(e) {
+  e.preventDefault();
+  let phrase = document.getElementById("input-phrase").value;
+  phrase = phrase
+    .replaceAll("e", "enter")
+    .replaceAll("i", "imes")
+    .replaceAll("a", "ai")
+    .replaceAll("o", "ober")
+    .replaceAll("u", "ufat");
+  let outputPhrase = (document.getElementById("output-phrase").value = phrase);
+  cleanUp();
+  return outputPhrase;
+}
+
 function copyText() {
   let phrase = document.getElementById("output-phrase");
   phrase.select();
   phrase.setSelectionRange(0, 99999);
   navigator.clipboard.writeText(phrase.value);
+}
+
+function cleanUp() {
+  document.getElementById("input-phrase").value = " ";
 }
