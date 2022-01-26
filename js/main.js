@@ -31,6 +31,19 @@ function encryptText(e) {
   return outputPhrase;
 }
 
+function decryptText(e) {
+  e.preventDefault();
+  let phrase = document.getElementById("input-phrase").value;
+  phrase = phrase
+    .replaceAll("enter", "e")
+    .replaceAll("imes", "i")
+    .replaceAll("ai", "a")
+    .replaceAll("ober", "o")
+    .replaceAll("ufat", "u");
+  document.getElementById("output-phrase").value = phrase;
+  cleanUp();
+}
+
 function copyText() {
   let phrase = document.getElementById("output-phrase");
   phrase.select();
