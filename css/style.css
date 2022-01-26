@@ -5,8 +5,22 @@
 }
 
 body {
-  background-color: lightgray;
+  /* background-color: lightgray;*/
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-image: radial-gradient(
+    circle at 87.5% 12.5%,
+    #ffb1a5 0,
+    #ffa5ab 10%,
+    #ff98af 20%,
+    #ff8caf 30%,
+    #ff7fac 40%,
+    #f171a4 50%,
+    #d1649a 60%,
+    #b55a91 70%,
+    #9c5289 80%,
+    #874b81 90%,
+    #74477b 100%
+  );
 }
 
 .main {
@@ -17,10 +31,11 @@ body {
 }
 
 .titulo {
-  padding: 15px;
+  padding: 35px;
   width: 30vw;
   margin: auto;
-
+  text-align: center;
+  color: blue;
 }
 
 .box {
@@ -50,4 +65,11 @@ body {
   padding: 0.5em;
   width: 100%;
   height: 50px;
+}
+
+footer {
+  text-align: center;
+  padding-top: 130px;
+  color: blue;
+  font-size: 20px;
 }
