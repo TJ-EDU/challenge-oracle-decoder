@@ -17,3 +17,9 @@ No se permite acentuación de palabras
 Solo letras minusculas
 No se permite acentuación de palabras   
 */
+function copyText() {
+  let phrase = document.getElementById("output-phrase");
+  phrase.select();
+  phrase.setSelectionRange(0, 99999);
+  navigator.clipboard.writeText(phrase.value);
+}
