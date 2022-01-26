@@ -17,6 +17,14 @@ No se permite acentuación de palabras
 Solo letras minusculas
 No se permite acentuación de palabras   
 */
+
+document.getElementById("input-phrase").addEventListener("keyup", autoValidate);
+function autoValidate() {
+  let phrase = document.getElementById("input-phrase");
+  const correction = new RegExp("[^A-Za-z ]", "g");
+  phrase.value = phrase.value.toLowerCase().replace(correction, "");
+}
+
 function encryptText(e) {
   e.preventDefault();
   let phrase = document.getElementById("input-phrase").value;
@@ -26,9 +34,8 @@ function encryptText(e) {
     .replaceAll("a", "ai")
     .replaceAll("o", "ober")
     .replaceAll("u", "ufat");
-  let outputPhrase = (document.getElementById("output-phrase").value = phrase);
+  document.getElementById("output-phrase").value = phrase;
   cleanUp();
-  return outputPhrase;
 }
 
 function decryptText(e) {
